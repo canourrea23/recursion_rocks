@@ -6,6 +6,11 @@
 def factorial(n):
     # Write code here
     pass
+    if n == 1:
+        return n
+    else:
+        return n * factorial(n - 1)
 
-# print(factorial(5))
+
+print(factorial(5))
 # => 120

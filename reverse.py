@@ -3,17 +3,21 @@
 
 # Write a recursive function called `reverse` that accepts a ss and returns a reversed ss.
 
-def reverse(ss):
-    # Write code here
-    pass
+def reverse(ss, already_reversed=''):
+    if len(ss) == 0:
+        return already_reversed
+    new_already_reversed = ss[0] + already_reversed
+    new_ss = ss[1:]
+    return reverse(new_ss, new_already_reversed)
 
-# print(reverse("")) 
+
+# print(reverse(""))
 # => ""
-# print(reverse("a")) 
+print(reverse("a"))
 # => "a"
-# print(reverse("ab")) 
+# print(reverse("ab"))
 # => "ba"
-# print(reverse("computer")) 
+# print(reverse("computer"))
 # => "retupmoc"
-# print(reverse(reverse("computer"))) 
+print(reverse(reverse("computer")))
 # => "computer"
